@@ -23,8 +23,8 @@ def detect_faces():
 
         if len(face_locations) > 0:
             return jsonify({"message": "positive", "no_of_faces": len(face_locations)})
-        else:
-            return jsonify({"message": "negative", "no_of_faces": len(face_locations)})
+
+        return jsonify({"message": "negative", "no_of_faces": len(face_locations)})
 
     return jsonify({"error": "An error occurred."}), 500
 
