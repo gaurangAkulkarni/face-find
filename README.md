@@ -1,4 +1,4 @@
-Certainly! Here's a `README.md` for the `find-face` API:
+Of course! Here's the updated `README.md`:
 
 ---
 
@@ -59,6 +59,68 @@ The Find-Face API provides endpoints for detecting and marking faces within uplo
 
 ## Deployment
 
-The application is ready for deployment on platforms like Heroku, AWS, GCP, etc. Ensure you have the necessary configurations in place for the deployment platform of your choice.
+### Heroku:
+
+1. **Login to Heroku**:
+   ```
+   heroku login
+   ```
+
+2. **Create a new app on Heroku**:
+   ```
+   heroku create your-app-name
+   ```
+
+3. **Add Heroku remote**:
+   ```
+   git remote add heroku https://git.heroku.com/your-app-name.git
+   ```
+
+4. **Commit your changes**:
+   ```
+   git add .
+   git commit -m "Prepare for Heroku deployment"
+   ```
+
+5. **Push to Heroku**:
+   ```
+   git push heroku master
+   ```
+
+6. **Scale your app**:
+   ```
+   heroku ps:scale web=1
+   ```
+
+### Azure:
+
+1. **Login to Azure**:
+   ```
+   az login
+   ```
+
+2. **Create a new Web App**:
+   ```
+   az webapp up -n your-app-name
+   ```
+
+3. **Set the deployment user** (if not done previously):
+   ```
+   az webapp deployment user set --user-name <username> --password <password>
+   ```
+
+4. **Deploy**:
+   ```
+   git add .
+   git commit -m "Prepare for Azure deployment"
+   git push azure master
+   ```
+
+5. **Browse to the application**:
+   ```
+   az webapp browse --name your-app-name --resource-group your-resource-group
+   ```
 
 ---
+
+Replace placeholders like `your-app-name`, `<username>`, and `<password>` with appropriate values.
