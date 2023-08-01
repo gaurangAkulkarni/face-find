@@ -11,12 +11,27 @@ The Find-Face API provides endpoints for detecting and marking faces within uplo
 1. **/find_face**
     - Detects if the uploaded image contains a human face.
     - **Method**: POST
-    - **Response**: 'Positive' if a face is detected, 'Negative' otherwise.
+    - **Response**: 'Positive' if a face is detected
+      ```
+         {
+            "message": "positive",
+            "no_of_faces": 2
+         }
+      ```
+      , 'Negative' otherwise.
+      ```
+         {
+            "message": "negative",
+            "no_of_faces": 0
+         }
+      ```
 
 2. **/locate_faces**
     - Identifies and marks the locations of faces within the uploaded image.
     - **Method**: POST
     - **Response**: A JPEG image with faces marked.
+
+   ![Alt text](documents/response.jpeg)
 
 ## Setup & Installation
 
