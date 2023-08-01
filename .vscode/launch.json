@@ -1,0 +1,36 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+
+        // Configuration for Flask development server (Debug mode)
+        {
+            "name": "Python: Flask (Debug)",
+            "type": "python",
+            "request": "launch",
+            "module": "flask",
+            "env": {
+                "FLASK_APP": "main.py",
+                "FLASK_DEBUG": "1"
+            },
+            "args": [
+                "run",
+                "--no-debugger",
+                "--no-reload"
+            ],
+            "jinja": true
+        },
+
+        // Configuration for running with Gunicorn (Run mode)
+        {
+            "name": "Python: Gunicorn (Run)",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/facefind-venv/bin/gunicorn",  // Adjust this if needed
+            "args": [
+                "-w", "4",
+                "-b", "localhost:8000",
+                "main:app"
+            ]
+        }
+    ]
+}
